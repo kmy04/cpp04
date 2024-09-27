@@ -6,11 +6,11 @@
 
 class Cure : public AMateria {
 private :
+	Cure(const Cure& other);
 	Cure& operator=(const Cure& other);
 public :
 	Cure();
 	Cure(std::string const & type);
-	Cure(const Cure& other);
 	~Cure();
 
 	AMateria* clone() const;

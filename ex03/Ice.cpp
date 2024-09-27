@@ -12,12 +12,6 @@ Ice::Ice(std::string const & type)
 	std::cout << "Ice string parameter constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice& other) {
-	(void)other;
-	_type = "ice";
-	std::cout << "Ice copy constructor called" << std::endl;
-}
-
 Ice::~Ice() {
 	std::cout << "Ice destructor called" << std::endl;
 }
@@ -27,5 +21,5 @@ void Ice::use(ICharacter& target) {
 }
 
 AMateria* Ice::clone() const {
-	return (new Ice(*this));
+	return (new Ice());
 }
