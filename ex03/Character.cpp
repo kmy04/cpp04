@@ -100,12 +100,16 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx >= 0 && idx < 4) {
+	if ( 0 <= idx && idx < 4) {
 		int i;
+		if (_inventory[idx] == NULL) {
+			std::cout << "The slot is empty, nothing to unequip." << std::endl;
+			return ;
+		}
 		for (i = 0; i < 50; i++) {
 			if (_floor[i] == NULL) {
 				_floor[i] = _inventory[idx];
-				std::cout << "Successfully unequipped " << _inventory[idx]->getType() << " from slot " << i << "." << std::endl;
+				std::cout << "Successfully unequipped " << _inventory[idx]->getType() << " from slot " << idx << "." << std::endl;
 				break ;
 			}
 		}
