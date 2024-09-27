@@ -1,7 +1,6 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() {
-	_materias = new AMateria*[4];
 	for (int i = 0; i < 4; i++) {
 		_materias[i] = NULL;
 	}
@@ -9,7 +8,6 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
-	_materias = new AMateria*[4];
 	for (int i = 0; i < 4; i++) {
 		if (other._materias[i] != NULL)
 			_materias[i] = other._materias[i]->clone();
@@ -35,7 +33,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < 4; i++) 
 		delete _materias[i];
-	delete[] _materias;
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
@@ -46,6 +43,7 @@ void MateriaSource::learnMateria(AMateria* materia) {
 			return ;
 		}
 	}
+	std::cout << "You can no longer learn any more Materia." << std::endl;
 	delete materia;
 }
 
