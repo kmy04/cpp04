@@ -3,13 +3,11 @@
 Character::Character()
 : _name("unknown")
 {
-	_inventory = new AMateria*[4];
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
-	_floor = new AMateria*[50];
 	for (int i = 0; i < 50; i++) {
-		_inventory[i] = NULL;
+		_floor[i] = NULL;
 	}
 	std::cout << "Character default constructor called" << std::endl;
 }
@@ -17,11 +15,9 @@ Character::Character()
 Character::Character(const std::string& name)
 : _name(name)
 {
-	_inventory = new AMateria*[4];
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
-	_floor = new AMateria*[50];
 	for (int i = 0; i < 50; i++) {
 		_floor[i] = NULL;
 	}
@@ -31,14 +27,12 @@ Character::Character(const std::string& name)
 Character::Character(const Character& other)
 : _name(other._name)
 {
-	_inventory = new AMateria*[4];
 	for (int i = 0; i < 4; i++) {
 		if (other._inventory[i] != NULL)
 			_inventory[i] = other._inventory[i]->clone();
 		else
 			_inventory[i] = NULL;
 	}
-	_floor = new AMateria*[50];
 	for (int i = 0; i < 50; i++) {
 		if (other._floor[i] != NULL)
 			_floor[i] = other._floor[i]->clone();
@@ -59,8 +53,8 @@ Character& Character::operator=(const Character& other)
 			else
 				_inventory[i] = NULL;
 		}
-		for (int i = 0; i < 4; ++i)
-            delete _inventory[i];
+		for (int i = 0; i < 50; ++i)
+            delete _floor[i];
 		for (int i = 0; i < 50; i++) {
 			if (other._floor[i] != NULL)
 				_floor[i] = other._floor[i]->clone();
@@ -76,10 +70,8 @@ Character& Character::operator=(const Character& other)
 Character::~Character() {
 	for (int i = 0; i < 4; ++i)
 		delete _inventory[i];
-	delete[] _inventory;
 	for (int i = 0; i < 50; ++i)
 		delete _floor[i];
-	delete[] _floor;
 	std::cout << "Charater destructor called" << std::endl;
 }
 
