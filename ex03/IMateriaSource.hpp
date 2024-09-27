@@ -7,6 +7,9 @@
 
 class IMateriaSource
 {
+private:
+	IMateriaSource(const IMateriaSource& other);
+	IMateriaSource& operator=(const IMateriaSource& other);
 public:
 	IMateriaSource();
 	virtual ~IMateriaSource();
