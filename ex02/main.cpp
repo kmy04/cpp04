@@ -3,7 +3,7 @@
 #include "Cat.hpp"
 
 // void leaks() {
-// 	system("leaks Animal");
+// 	system("leaks AAnimal");
 // }
 
 int main() {
