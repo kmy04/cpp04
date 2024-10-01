@@ -5,14 +5,14 @@
 #include "ICharacter.hpp"
 
 class Ice : public AMateria {
-private :
-	Ice(const Ice& other);
-	Ice& operator=(const Ice& other);
 public :
 	Ice();
 	Ice(std::string const & type);
+	Ice(const Ice& other);
+	Ice& operator=(const Ice& other);
 	~Ice();
 
+	AMateria& operator=(const AMateria& other);
 	AMateria* clone() const;
 	void use(ICharacter& target);
 };
