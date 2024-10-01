@@ -33,5 +33,19 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+
+	std::cout << "대입 연산" << std::endl;
+	AMateria *a = new Cure();
+	AMateria *b = new Ice();
+	AMateria *c = new Cure();
+
+	*a = *b;
+	*a = *c;
+	*b = *c;
+
+	delete a;
+	delete b;
+	delete c;
+
 	return 0;
 }
