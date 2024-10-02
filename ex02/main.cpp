@@ -30,10 +30,5 @@ int main() {
         delete animals[i];
     }
 
-    // 깊은 복사 테스트
-    std::cout << "\nDeep copy test:" << std::endl;
-    Dog originalDog;
-    Dog copiedDog = originalDog; // 깊은 복사
-
     return 0;
 }
