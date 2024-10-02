@@ -5,6 +5,11 @@ AAnimal::AAnimal()
 	std::cout << "AAnimal Default constructor called" << std::endl;
 }
 
+Animal::AAnimal(const std::string& type)
+: _type(type) {
+	std::cout << "AAnimal Default constructor called" << std::endl;
+}
+
 AAnimal::AAnimal(const AAnimal& other)
 : _type(other._type) {
 	std::cout << "AAnimal Copy constructor called" << std::endl;
