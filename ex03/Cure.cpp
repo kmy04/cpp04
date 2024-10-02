@@ -3,14 +3,14 @@
 #include "Cure.hpp"
 
 Cure::Cure()
+: AMateria("cure")
 {
-	AMateria::_type = "cure";
 	std::cout << "Cure default constructor called" << std::endl;
 }
 
 Cure::Cure(std::string const & type)
 {
-	AMateria::_type = type;
+	_type = type;
 	std::cout << "Cure string parameter constructor called" << std::endl;
 }
 
@@ -37,7 +37,7 @@ AMateria& Cure::operator=(const AMateria& other) {
 		if (ptr == NULL)
 			std::cout << "Cannot assigment other type, this type is Cure" << std::endl;
 		else {
-			std::cout << "AMateria Cure Copy assignment operator called" << std::endl;
+			std::cout << "AMateria Cure copy assignment operator called" << std::endl;
 			*this = *ptr;
 		}
 	}
@@ -49,5 +49,5 @@ void Cure::use(ICharacter& target) {
 }
 
 AMateria* Cure::clone() const {
-	return (new Cure());
+	return (new Cure(*this));
 }
