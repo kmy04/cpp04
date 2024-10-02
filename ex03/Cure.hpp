@@ -12,7 +12,7 @@ public :
 	Cure& operator=(const Cure& other);
 	~Cure();
 
-	AMateria& operator=(const AMateria& other);
+	virtual AMateria& operator=(const AMateria& other);
 	AMateria* clone() const;
 	void use(ICharacter& target);
 };
