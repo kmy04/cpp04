@@ -4,6 +4,9 @@
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
+private:
+	WrongCat(const WrongCat& other);
+	WrongCat& operator=(const WrongCat& other);
 public:
     WrongCat();
 

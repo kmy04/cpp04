@@ -5,6 +5,9 @@
 #include <string>
 
 class WrongAnimal {
+private:
+	WrongAnimal(const WrongAnimal& other);
+	WrongAnimal& operator=(const WrongAnimal& other);
 protected:
     std::string type;
 public:
