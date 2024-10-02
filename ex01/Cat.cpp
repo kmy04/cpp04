@@ -1,8 +1,10 @@
 #include "Cat.hpp"
 
-Cat::Cat() : brain(new Brain()){
-	_type = "cat";
+Cat::Cat() 
+: Animal("Cat")
+{
 	std::cout << "Cat Default constructor called" << std::endl;
+	brain = new Brain();
 }
 
 Cat::Cat(const Cat& other) {
@@ -28,4 +30,8 @@ Cat::~Cat() {
 
 void Cat::makeSound() const {
 	std::cout << "Meow! Meow!" << std::endl;
+}
+
+Brain* Cat::getBrain() const {
+	return (brain);
 }
