@@ -1,8 +1,8 @@
 #include "Ice.hpp"
 
 Ice::Ice()
+: AMateria("ice")
 {
-	_type = "ice";
 	std::cout << "Ice default constructor called" << std::endl;
 }
 
@@ -35,7 +35,7 @@ AMateria& Ice::operator=(const AMateria& other) {
 		if (ptr == NULL)
 			std::cout << "Cannot assigment other type, this type is Ice" << std::endl;
 		else {
-			std::cout << "AMateria Ice Copy assignment operator called" << std::endl;
+			std::cout << "AMateria Ice copy assignment operator called" << std::endl;
 			*this = *ptr;
 		}
 	}
