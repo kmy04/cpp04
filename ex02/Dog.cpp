@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 
 Dog::Dog() 
-: AAnimal("Dog")
+: Animal("Dog")
 {
 	std::cout << "Dog Default constructor called" << std::endl;
 	brain = new Brain();

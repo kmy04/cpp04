@@ -1,19 +1,19 @@
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 // void leaks() {
-// 	system("leaks AAnimal");
+// 	system("leaks Animal");
 // }
 
 int main() {
 	// atexit(leaks);
 
 	// 추상클래스인지 확인용 코드
-	// AAnimal animal;
+	// Animal animal;
 
 	// Dog와 Cat 객체 생성
-    const AAnimal* animals[4];
+    const Animal* animals[4];
     animals[0] = new Dog();
     animals[1] = new Cat();
     animals[2] = new Dog();
