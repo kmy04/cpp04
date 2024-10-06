@@ -16,11 +16,12 @@ Dog::Dog(const Dog& other) {
 Dog& Dog::operator=(const Dog& other) {
 	if (this != &other) {
 		_type = other._type;
-		delete brain;
 		std::cout << "Dog copy assignment operator called" << std::endl;
+		delete brain;
 		brain = new Brain(*other.brain);
 	}
-	return (*this);}
+	return (*this);
+}
 
 Dog::~Dog() {
 	delete brain;

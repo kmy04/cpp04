@@ -16,8 +16,8 @@ Cat::Cat(const Cat& other) {
 Cat& Cat::operator=(const Cat& other) {
 	if (this != &other) {
 		_type = other._type;
-		delete brain;
 		std::cout << "Cat Copy assignment operator called" << std::endl;
+		delete brain;
 		brain = new Brain(*other.brain);
 	}
 	return (*this);
