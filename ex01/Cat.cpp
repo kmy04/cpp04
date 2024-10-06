@@ -9,16 +9,16 @@ Cat::Cat()
 
 Cat::Cat(const Cat& other) {
 	_type = other._type;
-	brain = new Brain(*other.brain);
 	std::cout << "Cat Copy constructor called" << std::endl;
+	brain = new Brain(*other.brain);
 }
 
 Cat& Cat::operator=(const Cat& other) {
 	if (this != &other) {
 		_type = other._type;
 		delete brain;
-		brain = new Brain(*other.brain);
 		std::cout << "Cat Copy assignment operator called" << std::endl;
+		brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
